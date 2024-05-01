@@ -1,0 +1,28 @@
+[project]
+name = "epidemic-models"
+version = "0.1.0"
+description = "Default template for PDM package"
+authors = [
+    {name = "Daniel Kappe", email = "daniel.kappe@hsbi.de"},
+]
+dependencies = [
+    "numpy>=1.26.4",
+    "pygame>=2.5.2",
+]
+requires-python = "==3.12.*"
+readme = "README.md"
+license = {text = "MIT"}
+
+[tool.pdm]
+distribution = false
+
+[tool.pdm.dev-dependencies]
+dev = [
+    "mypy>=1.10.0",
+    "ruff>=0.4.2",
+]
+
+[tool.pdm.scripts]
+mypy = "mypy ./epidemic_models"
+lint = "ruff check ./epidemic_models"
+format = "ruff format ./epidemic_models"
